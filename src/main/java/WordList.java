@@ -21,14 +21,13 @@ public class WordList
   }
 
   public void removeWordsOfLength(int len) {
-    int index = 0;
+    Iterator<String> iterator = myList.iterator();
 
-    for (String word : myList) {
+    while (iterator.hasNext()) {
+      String word = iterator.next();
       if (word.length() == len) {
-        myList.remove(index);
-      } else {
-        index++;
+       iterator.remove();
       }
     }
-  }
+}
 }
